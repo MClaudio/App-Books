@@ -3,4 +3,4 @@ BackEnd - nodejs
 
 FrontEnd - Angular
 
-Database - PostgresSQL
+Database - PostgreSQL
