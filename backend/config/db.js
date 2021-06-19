@@ -3,12 +3,10 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const dbSocketAddr = process.env.DB_HOST.split(':');
-
 const sequelizeConection =  new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
-    host: dbSocketAddr[0],
+    host: process.env.DB_HOST,
     dialect: "postgres",
-    port: dbSocketAddr[1],
+    port: process.env.DB_PORT,
     define: {
         timestamps: false
     },

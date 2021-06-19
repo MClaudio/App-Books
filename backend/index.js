@@ -22,6 +22,7 @@ app.use(express.json());
 app.use('/', routes)
 
 app.set("port", process.env.PORT || 5000);
+const host = process.env.HOST || '0.0.0.0';
 
 app.listen(app.get("port"), () => {
   console.log("listening on "+ app.get("port"));

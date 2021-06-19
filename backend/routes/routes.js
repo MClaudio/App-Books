@@ -2,6 +2,12 @@ const express = require("express");
 const route = express.Router();
 const Books = require("../models/Book")
 
+
+route.get("/", async (req, res)=>{
+    return res.json({status: "ok", message: "server runing"})
+    
+});
+
 route.get("/books", async (req, res)=>{
     try {
         let books = await Books.findAll();
