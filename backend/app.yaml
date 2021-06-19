@@ -1,0 +1,14 @@
+runtime: nodejs
+env: flex
+#instance_class: F1
+env_variables:
+  DB_USER: "postgres"
+  DB_PASS: "database"
+  DB_NAME: "sistemasdistribuidosbooks"
+  DB_HOST: "172.17.0.1:5432"
+  CLOUD_SQL_CONNECTION_NAME: practicasistemasdistribuidos:us-central1:database
+
+beta_settings:
+  cloud_sql_instances: practicasistemasdistribuidos:us-central1:database
+  
+network: {}
