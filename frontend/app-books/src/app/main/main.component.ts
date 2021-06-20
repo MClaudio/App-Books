@@ -23,6 +23,8 @@ export class MainComponent implements OnInit {
     await this.service.getBooks().subscribe((res) => {
       //console.log('books', res);
       this.books = res;
+    }, err =>{
+      console.log(err)
     });
   }
   loadBook(b: any) {

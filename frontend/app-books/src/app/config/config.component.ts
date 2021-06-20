@@ -30,6 +30,8 @@ export class ConfigComponent implements OnInit {
       (res:any) => {
         //console.log("libro agregado", res)
         this.router.navigate(['/'])
+      }, err =>{
+        console.log(err)
       }
     );
   }
