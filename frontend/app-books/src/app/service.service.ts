@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from "src/environments/environment";
+
+const baseUrl = environment.baseUri;
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServiceService {
-  private uri = 'http://34.123.46.12';
+  private uri = baseUrl;
 
   constructor(private http: HttpClient) {}
 
