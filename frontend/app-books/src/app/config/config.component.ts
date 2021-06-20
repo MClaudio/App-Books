@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -19,15 +20,16 @@ export class ConfigComponent implements OnInit {
     img:''
   };
 
-  constructor(private service: ServiceService) { }
+  constructor(private service: ServiceService,private  router:Router) { }
 
   ngOnInit(): void {
   }
   async addBook(){
-    console.log(this.book)
+    //console.log(this.book)
     await this.service.addBook(this.book).subscribe(
       (res:any) => {
-        console.log("libro agregado", res)
+        //console.log("libro agregado", res)
+        this.router.navigate(['/'])
       }
     );
   }

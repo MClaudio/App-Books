@@ -1,66 +1,67 @@
 <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <form class="d-flex input-group w-auto" style="padding-left: 6%;">      
-        <a href="/main" style="color: white; font-size: 3ex;">Libros</a>
-        <a href="/config" style="color: white; padding-left: 15px; font-size: 3ex;">Configuracion</a>
+  <div class="container-fluid">
+    <form class="d-flex input-group w-auto" style="padding-left: 6%;">
+      <a href="/main" style="color: white; font-size: 3ex;">Libros</a>
+      <a href="/config" style="color: white; padding-left: 15px; font-size: 3ex;">Configuracion</a>
 
-      </form>
-    </div>
-  </nav>
-<div class="content" style="width: 100%; background-color: rgba(0, 0, 0, 0.671); justify-content: center; align-items: center; display: flex; flex-direction: column;">
-    <h2 style="color: white; padding: 15px;">BOOKS</h2>
-    <div class="container" style="background-color: rgba(0, 0, 0, 0.582);">
-        <div class="all row row-cols-4" style="justify-content: space-between;">
-            <div class="card" *ngFor="let book of books" style="margin: 15px; background-color: black; width: 20%; padding: 15px;" >
-                <img style="height: 70%; width: 100%; align-items: center; display: flex; justify-content: center; margin: auto; padding: 5px;"
-                src={{book.img}}
-                  class="card-img-top"
-                
-                />
-                <div class="card-body" style="background-color: black;">
-                  <h3 class="card-title" style="color: white;">{{book.name}}</h3>
-                  <h3 style="color: white;">$ {{book.price}}</h3>
-                <div style="text-align: center; display: flex; justify-content: space-between;">
-                    <a href="#!" class="btn btn-primary" (click)="loadBook(book)" data-bs-toggle="modal" data-bs-target="#exampleModal">Detalles</a>
-                    <a href="#!" class="btn btn-primary" style="margin-left: 5px;">Comprar</a>
+    </form>
+  </div>
+</nav>
+<div class="content"
+  style="width: 100%; background-color: rgba(0, 0, 0, 0.671); justify-content: center; align-items: center; display: flex; flex-direction: column;">
+  <h2 style="color: white; padding: 15px;">BOOKS</h2>
+  <div class="container" style="background-color: rgba(0, 0, 0, 0.582);">
+    <div class="all row row-cols-4" style="justify-content: space-between;">
+      <div class="card" *ngFor="let book of books"
+        style="margin: 15px; background-color: black; width: 20%; padding: 15px;">
+        <img 
+          style="height: 70%; width: 100%; align-items: center; display: flex; justify-content: center; margin: auto; padding: 5px;"
+          src={{book.img }} class="card-img-top" />
+        <div class="card-body" style="background-color: black;">
+          <h3 class="card-title" style="color: white;">{{book.name}}</h3>
+          <h3 style="color: white;">$ {{book.price}}</h3>
+          <div style="text-align: center; display: flex; justify-content: space-between;">
+            <a href="#!" class="btn btn-primary" (click)="loadBook(book)" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Detalles</a>
+            <a href="#!" class="btn btn-primary" style="margin-left: 5px;">Comprar</a>
 
-                </div>
-                 
-                </div>
-              </div>
-       
-       
           </div>
-          
 
-       
-      </div>
-
-
-
-
-      <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content" *ngIf="book">
-            <div class="modal-header" style="display: flex; flex-direction: column;">
-              <h2>{{book.name}}</h2>
-              <h4>{{book.price}}</h4>
-             
-            </div>
-            <div class="modal-body">
-             <ng-container>
-               <h3>Editorial: {{book.editorial}}</h3>
-               <h3>Autor: {{book.author}}</h3>
-               <h3>Año de creacion: {{book.year}}</h3>
-               <h3>Categoria: {{book.category}}</h3>
-               <h3>ISBN: {{book.isbn}}</h3>
-             </ng-container>      
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Comprar</button>
-            </div>
-          </div>
         </div>
       </div>
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" *ngIf="book">
+        <div class="modal-header" style="display: flex; flex-direction: column;">
+          <h2>{{book.name}}</h2>
+          <h4>{{book.price}}</h4>
+
+        </div>
+        <div class="modal-body">
+          <ng-container>
+            <h3>Editorial: {{book.editorial}}</h3>
+            <h3>Autor: {{book.author}}</h3>
+            <h3>Año de creacion: {{book.year}}</h3>
+            <h3>Categoria: {{book.category}}</h3>
+            <h3>ISBN: {{book.isbn}}</h3>
+          </ng-container>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

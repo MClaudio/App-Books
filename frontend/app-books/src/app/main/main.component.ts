@@ -19,9 +19,9 @@ export class MainComponent implements OnInit {
 
   }
   
-  loadData() {
-    this.service.getBooks().subscribe((res) => {
-      console.log('books', res);
+  async loadData() {
+    await this.service.getBooks().subscribe((res) => {
+      //console.log('books', res);
       this.books = res;
     });
   }
